@@ -53,16 +53,40 @@ while (0 != n && (*str1 != '\0' && *str2 != '\0'))
     return i;
 }
 
-void ft_memchr(const char *st,char ch ,int n)
+char *ft_memchr(char *st,char ch ,int n)
 {
 while (0 != n)
 {
-	/* code */
+	if (ch == *st)
+	{
+		return st;
+	}
+	st++;
+	n--;
+}
+return NULL;
 }
 
-}
-
-int main()
+int ft_memcmp(char *str1, char *str2, int n)
 {
-
+int i = 0;
+while (0 != n)
+{
+	i = *str1 - *str2;
+	if (i != 0)
+	{
+		if (i > 0)
+		{
+			return 1;
+		}
+		else if (i < 0)
+		{
+			return -1;
+		}
+	}
+	str1++;
+	str2++;
+	n--;
+}
+return 0;
 }
