@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarmona <acarmona@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 17:17:41 by acarmona          #+#    #+#             */
-/*   Updated: 2023/04/26 10:58:13 by acarmona         ###   ########.fr       */
+/*   Created: 2023/04/26 11:16:32 by acarmona          #+#    #+#             */
+/*   Updated: 2023/04/26 12:38:04 by acarmona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(char c)
+#include <stdio.h>
+
+char	*ft_memset(void *str, int c, size_t n)
 {
-	if (c > 31 && c < 127)
+	char	*ot;
+
+	ot = (char)str;
+	while (n > 0)
 	{
-		return (1);
+		*ot = (unsigned char)c;
+		n--;
+		ot++;
 	}
-	else
-	{
-		return (0);
-	}
+	return (str);
 }
+
+// int	main()
+// {
+// 	printf("%s",ft_memset("testyeah", 'k', 2));
+// }

@@ -6,11 +6,9 @@
 /*   By: acarmona <acarmona@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:23:49 by acarmona          #+#    #+#             */
-/*   Updated: 2023/04/20 15:37:31 by acarmona         ###   ########.fr       */
+/*   Updated: 2023/04/26 10:58:20 by acarmona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_isdigit(int c)
 {
