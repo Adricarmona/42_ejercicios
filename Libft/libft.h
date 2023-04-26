@@ -6,7 +6,7 @@
 /*   By: acarmona <acarmona@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 12:38:09 by acarmona          #+#    #+#             */
-/*   Updated: 2023/04/26 12:39:57 by acarmona         ###   ########.fr       */
+/*   Updated: 2023/04/26 13:08:47 by acarmona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int					ft_strlen(const char *str);
  * @param n
  * @return void* string with changes
  */
-void				*ft_memset(void *b, int c, int n);
+char				*ft_memset(void *s, int c, size_t n);
 /**
  * @brief Sets N bytes of STR string to 0
  *

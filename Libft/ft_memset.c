@@ -6,27 +6,32 @@
 /*   By: acarmona <acarmona@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 11:16:32 by acarmona          #+#    #+#             */
-/*   Updated: 2023/04/26 12:38:04 by acarmona         ###   ########.fr       */
+/*   Updated: 2023/04/26 13:06:38 by acarmona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
-char	*ft_memset(void *str, int c, size_t n)
+char	*ft_memset(void *s, int c, size_t n)
 {
 	char	*ot;
 
-	ot = (char)str;
-	while (n > 0)
+	ot = s;
+	while (n-- > 0)
 	{
 		*ot = (unsigned char)c;
-		n--;
 		ot++;
 	}
-	return (str);
+	return (s);
 }
 
-// int	main()
-// {
-// 	printf("%s",ft_memset("testyeah", 'k', 2));
-// }
+int main(void)
+{
+	char str[50];
+	strcpy(str, "This is string.h library function");
+	puts(str);
+	ft_memset(str, '$', 5);
+	puts(str);
+	return (0);
+}

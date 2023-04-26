@@ -6,7 +6,7 @@
 #    By: acarmona <acarmona@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/26 12:36:29 by acarmona          #+#    #+#              #
-#    Updated: 2023/04/26 12:38:04 by acarmona         ###   ########.fr        #
+#    Updated: 2023/04/26 13:12:42 by acarmona         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,11 +22,11 @@ ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
 OBJECTS = $(FILES:.c=.o)
 
-BONUS=ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c\
-ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c\
-ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+# BONUS=ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c\
+# ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c\
+# ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
-BOBJECTS=$(BONUS:.c=.o)
+# BOBJECTS=$(BONUS:.c=.o)
 
 FLAGS = -Wall -Wextra -Werror
 
