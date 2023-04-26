@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarmona <acarmona@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/26 11:16:32 by acarmona          #+#    #+#             */
-/*   Updated: 2023/04/26 13:31:41 by acarmona         ###   ########.fr       */
+/*   Created: 2023/04/26 13:16:00 by acarmona          #+#    #+#             */
+/*   Updated: 2023/04/26 13:31:03 by acarmona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_memset(void *s, int c, size_t n)
+char	ft_bzero(void *s, size_t n)
 {
 	char	*ot;
 
 	ot = s;
-	while (n-- > 0)
+	while (n != 0)
 	{
-		*ot = (unsigned char)c;
+		*ot = 0;
 		ot++;
+		n--;
 	}
 	return (s);
 }
