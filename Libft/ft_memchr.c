@@ -21,5 +21,5 @@ char	*ft_memchr(char *st, char ch, int n)
 	st++;
 	n--;
 	}
-	return (NULL);
+	return (0);
 }

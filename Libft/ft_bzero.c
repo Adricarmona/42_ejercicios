@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, int n)
 {
 	char	*ot;
 
@@ -21,5 +21,4 @@ char	ft_bzero(void *s, size_t n)
 		ot++;
 		n--;
 	}
-	return (s);
 }

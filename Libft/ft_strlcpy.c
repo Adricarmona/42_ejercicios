@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarmona <acarmona@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/26 09:59:08 by acarmona          #+#    #+#             */
-/*   Updated: 2023/04/26 10:00:31 by acarmona         ###   ########.fr       */
+/*   Created: 2023/05/01 19:24:03 by acarmona          #+#    #+#             */
+/*   Updated: 2023/05/01 19:24:03 by acarmona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(char c1, char *c2)
+int    *ft_strlcpy(char *dest, char *src , unsigned int n)
 {
-	while (*c2 != '\0')
-	{
-		if (*c2 == c1)
-		{
-			return (c2);
-		}
-		c2++;
-	}
-	return (0);
+int i;
+
+i = 0;
+if (n > 0)
+{
+  while (n > 0 && src[i])
+  {
+      dest[i] = src[i];
+      i++;
+      n--;
+  }
+  dest[i] = '\0';
+}
+  while (src[i + 1])
+  {
+    i++;
+  }
+return (i);
 }

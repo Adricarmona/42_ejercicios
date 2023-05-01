@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarmona <acarmona@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/26 09:59:08 by acarmona          #+#    #+#             */
-/*   Updated: 2023/04/26 10:00:31 by acarmona         ###   ########.fr       */
+/*   Created: 2023/05/01 19:24:12 by acarmona          #+#    #+#             */
+/*   Updated: 2023/05/01 19:24:12 by acarmona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(char c1, char *c2)
+int    ft_strlcat(char    *src, char *dest, int n)
 {
-	while (*c2 != '\0')
-	{
-		if (*c2 == c1)
-		{
-			return (c2);
-		}
-		c2++;
-	}
-	return (0);
+    int        i;
+    int        j;
+
+    i = 0;
+    j = 0;
+    while (dest[i] != '\0')
+    i++;
+    while (n >= 0 && src[j] != '\0')
+    {
+        dest[i] = src[j];
+        i++;
+        j++;
+        n--;
+    }
+    dest[i] = '\0';
+    return (i + 1);
 }

@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarmona <acarmona@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/26 09:59:08 by acarmona          #+#    #+#             */
-/*   Updated: 2023/04/26 10:00:31 by acarmona         ###   ########.fr       */
+/*   Created: 2023/05/01 19:53:41 by acarmona          #+#    #+#             */
+/*   Updated: 2023/05/01 19:53:41 by acarmona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(char c1, char *c2)
+int    ft_atoi(char *str)
 {
-	while (*c2 != '\0')
-	{
-		if (*c2 == c1)
-		{
-			return (c2);
-		}
-		c2++;
-	}
-	return (0);
+    int    i;
+    int tmp;
+    int j;
+
+    tmp = 0;
+    i = 0;
+    j = 1;
+    while (str[i] > 47 && str[i] < 58 || str[i] == '+' || str[i] == '-')
+    {
+            if (str[i] == '-')
+                j = j * -1;
+            if (str[i] > 47 && str[i] < 58 )
+                tmp = tmp * 10 +(str[i] - 48);
+            i++;
+    }
+    return (tmp * j);
 }

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_memset(void *s, int c, size_t n)
+char	*ft_memset(void *s, int c, int n)
 {
 	char	*ot;
 

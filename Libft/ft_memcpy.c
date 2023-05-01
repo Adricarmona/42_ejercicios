@@ -21,8 +21,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	const char	*otr2;
 	int	i;
 
-	src = otr2;
-	dest = otr;
+	otr2 = src;
+	otr = dest;
 	i = 0;
 	while (n > 0)
 	{
@@ -31,15 +31,4 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		n--;
 	}
 	return (dest);
-}
-
-int main(void)
-{
-	char src[20] = "mahmudulhasanjony";
-	char dest[20] = "DADADA";
-	char *ret;
-
-	ret = ft_memcpy(dest, src, 9);
-	printf("%s", ret);
-	return (0);
 }
