@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarmona <acarmona@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/01 19:24:24 by acarmona          #+#    #+#             */
-/*   Updated: 2023/05/01 19:24:24 by acarmona         ###   ########.fr       */
+/*   Created: 2023/05/05 16:44:00 by acarmona          #+#    #+#             */
+/*   Updated: 2023/05/05 16:44:00 by acarmona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *ft_memmove(void *str1, void *str2, int n)
-{
-	char *s1;
-	char *s2;
+#include <stdio.h>
 
-	s1 = (unsigned char)str1;
-	s2 = (unsigned char)str2;
-	while (n > 0)
-	{
-		if (s2 == '\0')
-		{
-			n = 0;
-		}
-		else
-		{
-			*s2 = *s1;
-		}
-		s1++;
-		s2++;
-		n--;
-	}
-	return (str1);
+char *ft_substr(char const *s, unsigned int start, size_t len)
+{
+char *tmp;
+int i;
+int j;
+
+i = 0;
+j = 0;
+tmp = (char)malloc(len);
+while (start > 0)
+{
+	start--;
+	i++;
+}
+while (j < len)
+{
+	tmp[j] = s[i];
+	j++;
+	i++;
+}
+return (tmp);
 }
