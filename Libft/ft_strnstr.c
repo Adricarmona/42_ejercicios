@@ -19,7 +19,7 @@ char	ft_strnstr(char *str1, char *str2, int n)
 	i = 0;
 	if (str2[j] == '\0')
 		return (*str1);
-	while (str1[i] != '\0')
+	while (str1[i] != '\0' || n < 0)
 	{
 		if (str1[i] == str2[j])
 		{
@@ -30,6 +30,7 @@ char	ft_strnstr(char *str1, char *str2, int n)
 			if (str2[j] == '\0')
 				return (str2[i]);
 		}
+	n--;
 	i++;
 	}
 	return (0);

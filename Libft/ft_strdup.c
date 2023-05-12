@@ -12,20 +12,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char *ft_strdup(char *str)
+char	*ft_strdup(char *str)
 {
-	char	*TMP;
-	int	i;
-	
+	char	*tmp;
+	int		i;
+
 	i = 0;
-	TMP = 0;
-	if(str[0]=='\0') 
-		return 0;
-	TMP = malloc(i*sizeof(char));
-	while(str[i] != '\0')
+	tmp = 0;
+	if (str[0] == '\0')
+		return (0);
+	tmp = malloc (i * sizeof(char));
+	while (str[i] != '\0')
 	{
-		TMP[i] = str[i];
+		tmp[i] = str[i];
 		i++;
 	}
-	return (TMP);
+	return (tmp);
 }

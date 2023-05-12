@@ -10,22 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int    ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
-    int    i;
-    int tmp;
-    int j;
+	int	i;
+	int	tmp;
+	int	j;
 
-    tmp = 0;
-    i = 0;
-    j = 1;
-    while (str[i] > 47 && str[i] < 58 || str[i] == '+' || str[i] == '-')
-    {
-            if (str[i] == '-')
-                j = j * -1;
-            if (str[i] > 47 && str[i] < 58 )
-                tmp = tmp * 10 +(str[i] - 48);
-            i++;
-    }
-    return (tmp * j);
+	tmp = 0;
+	i = 0;
+	j = 1;
+	while ((str[i] > 47 && str[i] < 58) || str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			j = j * -1;
+		if (str[i] > 47 && str[i] < 58)
+			tmp = tmp * 10 +(str[i] - 48);
+		i++;
+	}
+	return (tmp * j);
 }

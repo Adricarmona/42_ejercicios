@@ -10,24 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int    *ft_strlcpy(char *dest, char *src , unsigned int n)
+int	ft_strlcpy(char *dest, char *src, unsigned int n)
 {
-int i;
+	int	i;
 
 i = 0;
-if (n > 0)
-{
-  while (n > 0 && src[i])
-  {
-      dest[i] = src[i];
-      i++;
-      n--;
-  }
-  dest[i] = '\0';
-}
-  while (src[i + 1])
-  {
-    i++;
-  }
-return (i);
+	if (n > 0)
+	{
+		while (n > 0 && src[i])
+		{
+			dest[i] = src[i];
+			i++;
+			n--;
+		}
+	dest[i] = '\0';
+	}
+	while (src[i + 1])
+	{
+		i++;
+	}
+	return (i);
 }

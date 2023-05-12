@@ -34,14 +34,19 @@ ft_strnstr.c\
 ft_atoi.c\
 ft_calloc.c\
 ft_strdup.c\
+ft_substr.c\
+ft_strjoin.c\
+ft_strtrim.c\
+ft_split.c\
 
 OBJECTS = $(FILES:.c=.o)
 
-# BONUS=ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c\
-# ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c\
-# ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+BONUS=
+#ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c\
+ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c\
+ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
-# BOBJECTS=$(BONUS:.c=.o)
+BOBJECTS=$(BONUS:.c=.o)
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -53,9 +58,9 @@ $(NAME) : $(OBJECTS)
 $(OBJECTS) : $(FILES)
 	@gcc $(FLAGS) -c $(FILES)
 
-bonus:
-	@gcc $(FLAGS) -c $(BONUS)
-	@ar rcs $(NAME) $(BOBJECTS)
+#bonus:
+#	@gcc $(FLAGS) -c $(BONUS)
+#	@ar rcs $(NAME) $(BOBJECTS)
 
 clean:
 	@rm -f $(OBJECTS) $(BOBJECTS)

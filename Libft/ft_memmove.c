@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void *ft_memmove(void *str1, void *str2, int n)
+void	*ft_memmove(void *str1, void *str2, int n)
 {
-	char *s1;
-	char *s2;
+	char	*s1;
+	char	*s2;
 
-	s1 = (unsigned char)str1;
-	s2 = (unsigned char)str2;
+	s1 = str1;
+	s2 = str2;
 	while (n > 0)
 	{
-		if (s2 == '\0')
+		if (s2 == 0)
 		{
 			n = 0;
 		}
