@@ -31,12 +31,8 @@ void	*ft_memmove(void *str1, void *str2, int n)
 	}
 	else
 	{
-		i = n;
-		while (i > 0)
-		{
-			s1[i - 1] = s2[i - 1];
-			i--;
-		}
+		while (n--)
+			s1[n] = s2[n];
 	}
 	return (str1);
 }

@@ -14,7 +14,7 @@ int	ft_strlcpy(char *dest, char *src, unsigned int n)
 {
 	int	i;
 
-i = 0;
+	i = 0;
 	if (n > 0)
 	{
 		while (n > 0 && src[i])
@@ -25,7 +25,7 @@ i = 0;
 		}
 	dest[i] = '\0';
 	}
-	while (src[i + 1])
+	while (src[i] != '\0')
 	{
 		i++;
 	}
