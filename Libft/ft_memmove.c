@@ -14,22 +14,29 @@ void	*ft_memmove(void *str1, void *str2, int n)
 {
 	char	*s1;
 	char	*s2;
+	int		i;
 
 	s1 = str1;
 	s2 = str2;
-	while (n > 0)
+	if (s1 == 0 || s2 == 0 || n == 0)
+		return (str1);
+	if (s1 < s2)
 	{
-		if (s2 == 0)
+		i = 0;
+		while (i < n)
 		{
-			n = 0;
+			s1[i] = s2[i];
+			i++;
 		}
-		else
+	}
+	else
+	{
+		i = n;
+		while (i > 0)
 		{
-			*s2 = *s1;
+			s1[i - 1] = s2[i - 1];
+			i--;
 		}
-		s1++;
-		s2++;
-		n--;
 	}
 	return (str1);
 }
