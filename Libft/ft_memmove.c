@@ -10,16 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	*ft_memmove(void *str1, void *str2, int n)
 {
 	char	*s1;
 	char	*s2;
 	int		i;
 
-	s1 = str1;
-	s2 = str2;
+	s1 = (char *)str1;
+	s2 = (char *)str2;
 	if (s1 == 0 || s2 == 0 || n == 0)
-		return (str1);
+		return (NULL);
 	if (s1 < s2)
 	{
 		i = 0;

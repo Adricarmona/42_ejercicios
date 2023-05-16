@@ -93,7 +93,7 @@ void				*ft_memcpy(void *dst, const void *src, int size);
  * @param n
  * @return void*
  */
-void				*ft_memmove(void *s1, const void *s2, size_t n);
+void				*ft_memmove(void *s1, void *s2, int n);
 /**
  * @brief Copies DSTSIZE - 1 characters from SRC to DST. Returns SRC size
  *
@@ -112,7 +112,7 @@ size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
  * @param size
  * @return unsigned int
  */
-unsigned int		ft_strlcat(char *dst, char *src, unsigned int size);
+size_t				ft_strlcat(char *dst, char *src, size_t size);
 /**
  * @brief Changes C to uppercase, only if possible
  *

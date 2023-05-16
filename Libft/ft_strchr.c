@@ -10,15 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(char c1, char *c2)
+char	*ft_strchr(char *c1, int c2)
 {
-	while (*c2 != '\0')
+	while (*c1 != '\0')
 	{
-		if (*c2 == c1)
-		{
-			return (c2);
-		}
-		c2++;
+		if (*c1 == (char)c2)
+			return (c1);
+		c1++;
 	}
+	if (*c1 == (char)c2)
+		return (c1);
 	return (0);
 }

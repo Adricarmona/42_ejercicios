@@ -10,12 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, int n)
 {
 	char		*otr;
 	const char	*otr2;
@@ -24,6 +21,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	otr2 = src;
 	otr = dest;
 	i = 0;
+	if (dest == 0 && src == 0)
+		return (NULL);
 	while (n > 0)
 	{
 		otr[i] = otr2[i];
