@@ -17,6 +17,7 @@ int	ft_strlcpy(char *dest, char *src, unsigned int n)
 	i = 0;
 	if (n > 0)
 	{
+		n--;
 		while (n > 0 && src[i])
 		{
 			dest[i] = src[i];

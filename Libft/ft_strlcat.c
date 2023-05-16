@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlcat(char	*src, char *dest, int n)
+int	ft_strlcat(char	*dest, char *src, int n)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
-	while (dest[i] != '\0')
+	while (dest[i] != '\0' && i < n)
 		i++;
-	while (n >= 0 && src[j] != '\0')
+	while (n > i && src[j] != '\0')
 	{
 		dest[i] = src[j];
 		i++;
@@ -27,5 +27,10 @@ int	ft_strlcat(char	*src, char *dest, int n)
 		n--;
 	}
 	dest[i] = '\0';
-	return (i + 1);
+	while (src[j] != '\0')
+	{
+		j++;
+		i++;
+	}
+	return (i);
 }
