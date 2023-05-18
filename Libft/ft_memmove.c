@@ -20,7 +20,7 @@ void	*ft_memmove(void *str1, void *str2, int n)
 
 	s1 = (char *)str1;
 	s2 = (char *)str2;
-	if (s1 == 0 || s2 == 0 || n == 0)
+	if (s1 == 0 && s2 == 0)
 		return (NULL);
 	if (s1 < s2)
 	{

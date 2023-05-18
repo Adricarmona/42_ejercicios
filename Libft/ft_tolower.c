@@ -10,14 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_tolower(char c)
+int	ft_tolower(int c)
 {
-	char	x;
-
-	x = c;
-	if (x >= 'A' && x <= 'Z')
+	if (c >= 'A' && c <= 'Z')
 	{
-		x = x + 32 ;
+		c = c + 32 ;
 	}
-	return (x);
+	return (c);
 }

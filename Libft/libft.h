@@ -154,7 +154,7 @@ char				*ft_strrchr(const char *str, int c);
  * @param n
  * @return int
  */
-int					ft_strncmp(const char *s1, const char *s2, size_t n);
+int					ft_strncmp(const char *s1, const char *s2, unsigned int n);
 /**
  * @brief Changes a string to an integer
  *

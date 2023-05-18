@@ -10,24 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(const char *str1, const char *str2, int n)
-{
-	int	i;
+#include "libft.h"
 
-i = 0;
-	while (0 != n && (*str1 != '\0' && *str2 != '\0'))
+int	ft_strncmp(const char *str1, const char *str2, unsigned int n)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (i < n && (str1[i] != '\0' || str2[i] != '\0'))
 	{
-		if (*str1 > *str2)
-		{
-		i = *str1 - *str2 + i;
-		}
-		else if (*str2 > *str1)
-		{
-		i = *str2 - *str1 + i;
-		}
-	str1++;
-	str2++;
-	n--;
+		if ((unsigned char)str1[i] > (unsigned char)str2[i])
+			return (1);
+		else if ((unsigned char)str2[i] > (unsigned char)str1[i])
+			return (-1);
+	i++;
 	}
-	return (i);
+	return (0);
 }
