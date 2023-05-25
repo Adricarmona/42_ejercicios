@@ -10,27 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strnstr(char *str1, char *str2, int n)
-{
-	int		i;
-	int		j;
+#include "libft.h"
 
-	j = 0;
+char	*ft_strnstr(const char *str1, const char *str2, size_t n)
+{
+	size_t		i;
+	size_t		j;
+
 	i = 0;
-	if (str2[j] == '\0')
+	if (!*str2)
 		return ((char *)str1);
-	while (str1[i] != '\0' && n > 0)
+	while (str1[i] && i < n)
 	{
-		if (str1[i] == str2[j])
+		j = 0;
+		while (str1[i + j] == str2[j] && str2[j] && i + j < n)
 		{
-			while (str1[i + j] == str2[j] && str2[j] != '\0' && i + j < n)
-				j++;
-			if (str2[j] == '\0')
-				return ((char *)str1 + i);
-			j = 0;
+			if (str2[++j] == '\0')
+				return ((char *)&str1[i]);
 		}
-	n--;
-	i++;
+		i++;
 	}
 	return (0);
 }
