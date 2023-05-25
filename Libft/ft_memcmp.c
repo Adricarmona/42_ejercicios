@@ -15,20 +15,11 @@ int	ft_memcmp(char *str1, char *str2, int n)
 	int	i;
 
 i = 0;
-	while (0 != n)
+	while (n != 0)
 	{
-	i = *str1 - *str2;
+	i = (unsigned char)*str1 - (unsigned char)*str2;
 		if (i != 0)
-		{
-			if (i > 0)
-			{
-				return (1);
-			}
-			else if (i < 0)
-			{
-				return (-1);
-			}
-		}
+			return (i);
 	str1++;
 	str2++;
 	n--;

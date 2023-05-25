@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_strnstr(char *str1, char *str2, int n)
+char	*ft_strnstr(char *str1, char *str2, int n)
 {
 	int		i;
 	int		j;
@@ -18,17 +18,16 @@ char	ft_strnstr(char *str1, char *str2, int n)
 	j = 0;
 	i = 0;
 	if (str2[j] == '\0')
-		return (*str1);
-	while (str1[i] != '\0' || n < 0)
+		return ((char *)str1);
+	while (str1[i] != '\0' && n > 0)
 	{
 		if (str1[i] == str2[j])
 		{
-			while (str1[i + j] == str2[j] && str2[j] != '\0')
-			{
+			while (str1[i + j] == str2[j] && str2[j] != '\0' && i + j < n)
 				j++;
-			}
 			if (str2[j] == '\0')
-				return (str2[i]);
+				return ((char *)str1 + i);
+			j = 0;
 		}
 	n--;
 	i++;
