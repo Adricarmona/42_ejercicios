@@ -10,28 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int inic, size_t lon)
 {
 	char	*tmp;
-	int		i;
-	size_t	j;
+	size_t	tam;
 
-i = 0;
-j = 0;
-tmp = (char *)malloc(len);
-	while (start > 0)
-	{
-		start--;
-		i++;
-	}
-	while (j < len)
-	{
-		tmp[j] = s[i];
-		j++;
-		i++;
-	}
+	tam = ft_strlen(s);
+	if (inic > tam)
+		return (ft_strdup(""));
+	if (tam - inic < lon)
+		lon = tam - inic;
+	tmp = (char *) malloc(lon + 1);
+	if (!tmp)
+		return ('\0');
+	ft_memcpy(tmp, s + inic, lon);
+	tmp[lon] = '\0';
 	return (tmp);
 }

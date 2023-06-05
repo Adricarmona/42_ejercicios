@@ -10,26 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*tmp;
 	int		i;
-	int		j;
 
-tmp = 0;
-i = 0;
-j = ft_strlen(s1);
-	if (s1 != 0 && set != 0)
+	if (!s1 || !set)
+		return (0);
+	if (s1[0] == '\0' && set[0] == '\0')
 	{
-		while (ft_strchr(set, s1[i]) != 0)
-			i++;
-		while (ft_strchr(set, s1[j]) != 0 && j > i)
-			j--;
-		tmp = (char *)malloc(sizeof(char) * j - i);
-		ft_strlcpy(tmp, &s1[i], j - i);
+		tmp = malloc(sizeof(char));
+		if (!tmp)
+			return (0);
+		tmp[0] = '\0';
+		return (tmp);
 	}
+	while (*s1 && ft_strchr(set,*s1))
+		s1++;
+	i = ft_strlen(s1);
+	while (i > 0 && ft_strchr(set, s1[i]))
+		i--;
+	tmp = ft_substr(s1, 0, (size_t)i + 1);
 	return (tmp);
 }

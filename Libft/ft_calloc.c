@@ -10,20 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	*ft_calloc(int n, int size )
+void	*ft_calloc(size_t n, size_t size )
 {
 	void	*tmp;
 
 	tmp = malloc(n * size);
 	if (tmp == NULL)
 		return (tmp);
-	while (n != 0)
-	{
-		tmp = 0;
-		tmp++;
-		n--;
-	}
+	ft_memset (tmp, 0, n * size);
 	return (tmp);
 }

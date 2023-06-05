@@ -9,23 +9,18 @@
 /*   Updated: 2023/05/04 15:26:55 by acarmona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <stdlib.h>
 
-char	*ft_strdup(char *str)
+#include "libft.h"
+
+char	*ft_strdup(const char *str)
 {
-	char	*tmp;
-	int		i;
+	void	*tmp;
+	size_t	i;
 
-	i = 0;
-	tmp = 0;
-	if (str[0] == '\0')
+	i = ft_strlen(str) + 1;
+	tmp = (char *) malloc (i);
+	if (!tmp)
 		return (0);
-	tmp = malloc (i * sizeof(char));
-	while (str[i] != '\0')
-	{
-		tmp[i] = str[i];
-		i++;
-	}
-	return (tmp);
+	ft_memcpy(tmp, str, i);
+	return ((char *)tmp);
 }

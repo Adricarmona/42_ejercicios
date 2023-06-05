@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	numlet(char const *s, char c)
 {
 	int	i;
@@ -19,37 +21,63 @@ int	numlet(char const *s, char c)
 	j = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (s[i] != c)
 		{
 			j++;
+			while (s[i] && s[i] != c)
+				i++;
 		}
-		i++;
+		else
+			i++;
 	}
 	return (j);
 }
 
+static int	wordlon(char const *s, char c, int i)
+{
+	int	l;
+
+	l = 0;
+	while (s[i] != c && s[i])
+	{
+		l++;
+		i++;
+	}
+	return (l);
+}
+
+char	**ft_free(char **s, int j)
+{
+	while (--j >= 0)
+		free(s[j]);
+	free(s);
+	return (0);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	char	**tmp;
 	int		i;
+	int		word;
+	char	**strs;
+	int		size;
 	int		j;
-	int		t;
 
-	t = 0;
 	i = 0;
-	j = 0;
-	tmp = 0;
-	while (s[t] != '\0')
+	j = -1;
+	word = numlet(s, c);
+	(strs = (char **)malloc((word + 1) * sizeof(char *)));
+	if (strs == 0)
+		return (0);
+	while (++j < word)
 	{
-		if (s[t] == c)
-		{
-			j++;
-			i = 0;
-		}
-		else
-		tmp[i][j] = s[t];
-		i++;
-		t++;
+		while (s[i] == c)
+			i++;
+		size = wordlon(s, c, i);
+		(strs[j] = ft_substr(s, i, size));
+		if (!strs[j])
+			return (ft_free(strs, j));
+		i += size;
 	}
-	return (tmp);
+	strs[j] = 0;
+	return (strs);
 }
