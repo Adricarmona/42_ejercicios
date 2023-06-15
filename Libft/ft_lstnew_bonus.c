@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarmona <acarmona@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/26 11:16:32 by acarmona          #+#    #+#             */
-/*   Updated: 2023/04/26 13:31:41 by acarmona         ###   ########.fr       */
+/*   Created: 2023/06/13 18:03:48 by acarmona          #+#    #+#             */
+/*   Updated: 2023/06/13 18:03:48 by acarmona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_memset(void *s, int c, size_t n)
+t_list	*ft_lstnew(void *con)
 {
-	char	*ot;
+	struct s_list	*n;
 
-	ot = s;
-	while (n-- > 0)
-	{
-		*ot = (unsigned char)c;
-		ot++;
-	}
-	return (s);
+	n = malloc(sizeof(struct s_list));
+	if (!n)
+		return (0);
+	n->content = con;
+	n->next = NULL;
+	return (n);
 }
