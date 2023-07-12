@@ -54,3 +54,53 @@ char	*ft_dec(int n)
 	}
 	return (s);
 }
+
+int	ft_stri(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str != '\0')
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	while (str[i] != '\0')
+		i++;
+	write(1, str, i);
+	return (i);
+}
+
+int	ft_uni(unsigned int n)
+{
+	char	*s;
+	int		c;
+
+	s = ft_dec(n);
+	c = ft_stri(s);
+	free(s);
+	return (c);
+}
+
+int	ft_exa(size_t n, int c)
+{
+	size_t	i;
+	char * 	s;
+
+	i = 0;
+	
+	if (n >= 16)
+		i + i = ft_exa(n / 16, c)
+	if (c == 0)
+	{
+		s = "0123456789abcdef";
+		write(1 ,s[n] , 1);
+	}
+	else
+	{
+		s = "0123456789ABCDEF";
+		write(1 ,s[n] , 1);
+	}
+	i++;
+	return (i);
+}
