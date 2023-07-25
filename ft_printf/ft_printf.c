@@ -6,7 +6,7 @@
 /*   By: acarmona <acarmona@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 18:17:40 by acarmona          #+#    #+#             */
-/*   Updated: 2023/07/17 18:13:34 by acarmona         ###   ########.fr       */
+/*   Updated: 2023/07/17 18:58:31 by acarmona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int	ft_printf_check(int fun, va_list tmp)
 
 	i = 0;
 	if (fun == '%')
-		i = i + ft_putchar(va_arg(tmp, char));
+		i = i + write(1, "%", 1);
 	if (fun == 'c')
-		i = i + ft_putchar(va_arg(tmp, char));
+		i = i + ft_putchar(va_arg(tmp, int));
 	if (fun == 'd' || fun == 'i')
 		i = i + ft_dec(va_arg(tmp, int ));
 	if (fun == 's')
@@ -48,7 +48,7 @@ int	ft_printf(const char *str, ...)
 	while (str[i] != '\0')
 	{
 		if (str[i] == '%')
-			c = c + ft_printf_check(str[i++], tmp);
+			c = c + ft_printf_check(str[++i], tmp);
 		else
 			c = c + write(1, str + i, 1);
 		i = i + 1;

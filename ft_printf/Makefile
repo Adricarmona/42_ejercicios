@@ -6,14 +6,15 @@
 #    By: acarmona <acarmona@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/17 17:27:28 by acarmona          #+#    #+#              #
-#    Updated: 2023/07/17 17:30:31 by acarmona         ###   ########.fr        #
+#    Updated: 2023/07/17 18:57:00 by acarmona         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
 FILES = ft_printf.c\
-ft_dec.c
+ft_dec.c\
+ft_putchar.c
 
 OBJECTS = $(FILES:.c=.o)
 

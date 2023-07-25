@@ -6,7 +6,7 @@
 /*   By: acarmona <acarmona@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 19:20:03 by acarmona          #+#    #+#             */
-/*   Updated: 2023/07/17 17:50:53 by acarmona         ###   ########.fr       */
+/*   Updated: 2023/07/17 18:54:14 by acarmona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,11 @@ static int	num_count(long i)
 	return (c);
 }
 
-char	*ft_dec(int n)
+int	ft_dec(long i)
 {
 	char	*s;
 	size_t	l;
-	long	i;
 
-	i = n;
 	l = num_count(i);
 	s = (char *) malloc (sizeof (char) * (l + 1));
 	if (!s)
@@ -52,7 +50,9 @@ char	*ft_dec(int n)
 		i = i / 10;
 		l--;
 	}
-	return (s);
+	i = ft_stri(s);
+	free(s);
+	return (i);
 }
 
 int	ft_stri(char *str)
@@ -60,7 +60,7 @@ int	ft_stri(char *str)
 	int	i;
 
 	i = 0;
-	if (str != '\0')
+	if (str != 0)
 	{
 		write(1, "(null)", 6);
 		return (6);
@@ -73,12 +73,9 @@ int	ft_stri(char *str)
 
 int	ft_uni(unsigned int n)
 {
-	char	*s;
 	int		c;
 
-	s = ft_dec(n);
-	c = ft_stri(s);
-	free(s);
+	c = ft_dec(n);
 	return (c);
 }
 
@@ -89,16 +86,16 @@ int	ft_exa(size_t n, int c)
 
 	i = 0;
 	if (n >= 16)
-		i + i = ft_exa(n / 16, c);
+		i = i + ft_exa(n / 16, c);
 	if (c == 0)
 	{
 		s = "0123456789abcdef";
-		write(1, s[n], 1);
+		write(1, s + n, 1);
 	}
 	else
 	{
 		s = "0123456789ABCDEF";
-		write(1, s[n], 1);
+		write(1, s + n, 1);
 	}
 	i++;
 	return (i);
