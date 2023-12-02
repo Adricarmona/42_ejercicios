@@ -1,7 +1,6 @@
-### 42_ejercicios<br\>
-#Ejercicios de 42:<br\>
--Lift <br\>
--PrintF (no completo)<br\>
-<br\>
-<br\>
-De los meses que estuve 
+### 42_ejercicios
+#Ejercicios de 42:
+-Lift
+-PrintF (no completo)
+
+De los meses que estuve
